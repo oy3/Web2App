@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <title>Error 404</title>
+</head>
+
+<style>
+    @media (min-width:100px) {
+        .mobile-size {
+            flex: 0 0 auto;
+            width: 50%;
+        }
+    }
+</style>
+
+<body>
+    <div class="container" style="display:flex; position:absolute; top:0; bottom:0; right:0; left:0; ">
+        <div style="margin:auto;" class="text-center mx-1">
+            <img src="assets/img/bot.png" class="img-fluid  mb-5" width="150vh" height="150vh">
+
+            <div class="row">
+                <span class="mb-3 strong h3 fw-bold">Oops! Something went wrong</span>
+                <span>Please check your internet connection, make sure WiFi or cellular data is turned on and then try
+                    again.</span>
+
+            </div>
+            <div class="my-5">
+                <!-- <a href="Javascript:history.go ( -1); Location.reload ()"> -->
+                <!-- <button type="button"
+                        class="btn btn-dark text-uppercase col-3 col-lg-3 col-xl-3 col-md-4 col-sm-5 p-3 mobile-size  rounded-pill">Try
+                        Again</button></a> -->
+
+                <button id="reload"
+                    class="btn btn-dark text-uppercase col-3 col-lg-3 col-xl-3 col-md-4 col-sm-5 p-3 mobile-size rounded-pill"
+                    type="button">
+                    <span id="btn-title" class="">Try Again</span>
+                    <span id="load1" class="visually-hidden">
+                        <span id="load2" class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                        Reloading
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+
+
+<script>
+    $(document).ready(function () {
+        $('.btn').on('click', function () {
+            var $this = $(this);
+
+            $("#btn-title").addClass("visually-hidden");
+            $("#load1").removeClass("visually-hidden");
+            $this.attr("disabled", "true");
+            
+
+            setTimeout(function () {
+                // <!--                location.replace(document.referrer);-->
+
+               window.history.back()
+                // location.replace(document.referrer);
+
+                // $("#btn-title").removeClass("visually-hidden");
+                // $("#load1").addClass("visually-hidden");
+                // $this.removeAttr("disabled");
+            }, 3000);
+        });
+    });
+
+</script>
+
+
+</html>

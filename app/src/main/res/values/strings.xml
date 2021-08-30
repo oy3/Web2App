@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Web2App</string>
+    <string name="error_image">Error Image</string>
+    <string name="error_title">Oops! Something went wrong</string>
+    <string name="error_content">Please check your internet connection, make sure wifi or cellular data is turned on and then try again.</string>
+    <string name="error_btn">Try Again</string>
+</resources>
